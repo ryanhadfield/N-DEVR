@@ -1,0 +1,55 @@
+{{!-- Title and Image --}}
+<div class="parallax-container">
+  <div class="parallax">
+    <img src="/assets/img/trailintrees.jpg" alt="trail in woods" class="responsive-img" />
+    <div class="centered-right">
+      <h1><span style="color: #EBAF1A">N</span>-DEVR Profile</h1>
+    </div>
+  </div>
+</div>
+
+<section class="section profile-top-section">
+  <div class="container">
+    <div class="row">
+
+      {{!-- Profile Name & Image --}}
+      <div class="col s12 m6 center" id="exofont" data-aos="zoom-in">
+        <img class='circle profile-pic z-depth-3'  src={{user.user_photo}}>
+        <h3>{{user.user_first}} {{user.user_last}}</h3>
+        {{#if user.user_city}}
+        <p><i class="fas fa-map-marker-alt"></i> {{user.user_city}}, {{user.user_state}}</p>
+        {{/if}}
+      </div>
+
+      {{!-- Plan your activity --}}
+      <div class="col s12 m6">
+        <div class="card center activitysection">
+          <h3 class="center-align" id="exofont">Plan an <span style="color: #EBAF1A">N</span>-DEVR</h3>
+          <a class="waves-effect waves-light btn-large new-activity-button" href="/profile/activity"><i
+              class="material-icons left">add_circle</i>Create new Activity</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{!-- Your saved activities --}}
+<section class="activitysection">
+  <div class="container" id="exofont">
+    <div class="row">
+      <div class='col s12'>
+        <h3>Your activities</h3>
+        <ul class="collection">
+          {{#each activities}}
+          <li class="collection-item" data-value={{id}}>
+            <a class="title" href="/profile/viewActivity/{{id}}">{{activity_name}}</a>
+            <a href="#!" id="deleteActivityButton" class="secondary-content btn-floating hover btn-small" data-value={{id}}><i class="far fa-trash-alt"></i></a>
+          </li>
+          {{/each}}
+      </div>
+    </div>
+    <a class="waves-effect waves-light btn-small strava-logout-button " href="/auth/logout">Logout</a>
+  </div>
+</section>
+
+<script src="/assets/js/profile.js"></script>

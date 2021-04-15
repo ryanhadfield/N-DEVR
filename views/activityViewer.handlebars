@@ -1,0 +1,116 @@
+<section class="section grey lighten-5">
+    <div class="row container" id="exofont">
+        <div class='col s12 m6' id='topInformationSection' data-aos="zoom-out">
+            <div class="card hoverable">
+                <div class='card-content'>
+                    <span class="card-title center-align" style="font-size: 2em">Your <span
+                            style="color: #EBAF1A">N</span>-DEVR</span>
+                    <br>
+                    <i style="font-size: 3em; color: #027F9E" class="fas fa-biking left"></i>
+                    <h5>{{activity_name}}</h5>
+                    <br>
+                    <i style="font-size: 3em; color: #027F9E" class="fas fa-info-circle left"></i>
+                    <h6>{{activity_desc}}</h6>
+                </div>
+            </div>
+        </div>
+        <div class='col s12 m6' id='topInformationSection' data-aos="zoom-out">
+            <div class="card hoverable">
+                <div class='card-content'>
+                    <span class="card-title center-align" style="font-size: 2em">When does it start?</span>
+                    <br>
+                    <i style="font-size: 3em; color: #027F9E" class="far fa-calendar-alt left"></i>
+                    <h5 id='activity_date_el'></h5>
+                    <br>
+                    <i style="font-size: 3em; color: #027F9E" class="fas fa-clock left"></i>
+                    <h5 id='activity_time_el'></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row container" id="exofont">
+        <div class="col s12 m4" data-aos="zoom-out" >
+            <div class="card hoverable">
+                <div class="card-content">
+                    <span class="card-title center-align" style="font-size: 2em">Distance</span>
+                    <div class="row center-align">
+                        <i style="font-size: 6em; color: #027F9E" class="fas fa-running center-align"></i>
+                    </div>
+                    <h3 class='center-align' style='color: #EB411A'>{{total_distance}} miles</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m4" data-aos="zoom-out">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <span class="card-title center-align" style="font-size: 2em">Elevation Gain</span>
+                    <div class="row center-align">
+                        <i style="font-size: 6em; color: #027F9E" class="fas fa-arrow-up center-align"></i>
+                    </div>
+                    <h3 class='center-align' style='color: #EB411A'>{{total_elevationGain}} feet</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m4" data-aos="zoom-out">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <span class="card-title center-align" style="font-size: 2em">Elevation Loss</span>
+                    <div class="row center-align">
+                        <i style="font-size: 6em; color: #027F9E" class="fas fa-arrow-down center-align"></i>
+                    </div>
+                    <h3 class='center-align' style='color: #EB411A'>{{total_elevationLoss}} feet</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class='row container' id="exofont">
+        <div class='col s12 m4' data-aos="zoom-out">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <span class="card-title"><i class="fas fa-users" style='font-size: 2em; color: #027F9E'></i> Who's
+                        Coming Along</span>
+                    <br>
+                    <ul id="participantList" class="collection">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class='col s12 m8' data-aos="zoom-out">
+            <div id="mapid" style="height: 500px" class="z-depth-3"></div>
+        </div>
+    </div>
+    </div>
+    <br>
+    <div class='row container' id="exofont">
+        <div class='col s12 m6' data-aos="zoom-out">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <table class="highlight">
+                        <thead>
+                            <tr class='coolblue'>
+                                <th>Segment Name</th>
+                                <th>Distance</th>
+                                <th>Elevation</th>
+                            </tr>
+                        </thead>
+                        <tbody id='segmentList'>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class='col s12 m6' data-aos="zoom-out">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p id="activityId">{{id}}</p>
+</section>
+<div class="container center">
+    <a class="waves-effect waves-light btn-large" id="letsgobtn" href="/auth/strava" >Back to your Profile</a>
+</div>
+
+<script src="/assets/js/activityViewer.js"></script>

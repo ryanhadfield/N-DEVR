@@ -1,0 +1,205 @@
+{{!-- Title and Image --}}
+<div class="parallax-container">
+  <div class="parallax">
+    <img src="/assets/img/biking.jpg" alt="trail runners" class="responsive-img" />
+    <div class="centered-right">
+      <h1 id="ndervfont">Let's plan an <span id="ndevrfont" style="color: #EBAF1A">N</span>-DEVR!</h1>
+    </div>
+  </div>
+</div>
+
+{{!-- How to create activity --}}
+<section class="section" id="exofont">
+  <div class="row container">
+    <i class="small material-icons left" style="color: #EBAF1A">map</i>
+    <p class="flow-text"> Have a look around at the 1000's of segments on the map. </p>
+    <i class=" material-icons left" style="color: #EBAF1A">format_list_bulleted</i>
+    <p class="flow-text">Select segments you'd like to add to your activity by clicking on them.</p>
+    <i class=" material-icons left" style="color: #EBAF1A">place</i>
+    <p class="flow-text">Set a meeting place to kick off your adventure. Right click on the map where you'd like to
+      start your activity</p>
+  </div>
+  <div class="row container">
+    <div class="col s12 m6">
+      <table class="highlight">
+        <thead>
+          <tr class="coolblue">
+            <th>Segment Name</th>
+            <th>Distance</th>
+            <th>Elev. Change</th>
+          </tr>
+        </thead>
+        <tbody id='activityList'>
+        </tbody>
+      </table>
+    </div>
+    <div class="col s12 m6">
+      <div class="z-depth-2" id="mapid" style="height: 500px"></div>
+    </div>
+  </div>
+  <div class="row container">
+    <div class="col s12 m4">
+      <div class="card hoverable">
+        <div class="card-content">
+          <span class="card-title center-align">Distance</span>
+          <div class="row center-align">
+            <i style="font-size: 6em; color: #027F9E" class="fas fa-running center-align"></i>
+          </div>
+          <h3 class='center-align' style='color: #EB411A' id="totalDistance"></h3>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m4">
+      <div class="card hoverable">
+        <div class="card-content">
+          <span class="card-title center-align">Elevation Gain</span>
+          <div class="row center-align">
+            <i style="font-size: 6em; color: #027F9E" class="fas fa-arrow-up center-align"></i>
+          </div>
+          <h3 class='center-align' style='color: #EB411A' id="totalElevationGained"></h3>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m4">
+      <div class="card hoverable">
+        <div class="card-content">
+          <span class="card-title center-align">Elevation Loss</span>
+          <div class="row center-align">
+            <i style="font-size: 6em; color: #027F9E" class="fas fa-arrow-down center-align"></i>
+          </div>
+          <h3 class='center-align' style='color: #EB411A' id="totalElevationLost"></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h4 id="totalDistance"></h4>
+  <h4 id="totalElevationGained"></h4>
+  <div class="row container">
+    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+    <p id='user_id'>{{user.id}}</p>
+    <p id='user_strava_id'>{{user.user_strava_id}}</p>
+  </div>
+</section>
+<div class="row container">
+  <div class="col s12">
+    
+    <!-- Modal Trigger -->
+    <a class="waves-effect waves-light btn-large modal-trigger right" style="background-color: #eb401a;" href="#modal1" id="firstModalButton">Next</a>
+  </div>
+</div>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content" id="exofont">
+    <div class="row">
+      <div class='col s12 m2'></div>
+      <div class='col s12 m8'>
+        <h3>Name your <span style="color: #EBAF1A">N</span>-DEVR!</h3>
+      </div>
+      <div class='col s12 m2'></div>
+    </div>
+    <div class="row">
+      <div class='col s12 m2'></div>
+      <div class="input-field col s12 m8">
+        <input id="activityName" type="text" class="validate">
+        <label class="active" for="activityName">Activity Name</label>
+      </div>
+      <div class='col s12 m2'></div>
+    </div>
+    <div class="row">
+      <div class='col s12 m2'></div>
+      <form class="col s12 m8">
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="activityDesc" class="materialize-textarea"></textarea>
+            <label for="activityDesc">Activity Desc</label>
+          </div>
+        </div>
+      </form>
+      <div class='col s12 m2'></div>
+    </div>
+    <div class="modal-footer">
+      <a class="waves-effect waves-light btn-large modal-trigger" style="background-color: #eb401a;" href="#modal2" id="letsgobtn">Next</a>
+    </div>
+  </div>
+</div>
+
+<div id="modal2" class="modal">
+  <div class="modal-content" id="exofont">
+    <div class="row">
+      <div class='col s12 m2'></div>
+      <div class='col s12 m8'>
+        <h3>When is it happening?</h3>
+      </div>
+      <div class='col s12 m2'></div>
+    </div>
+    <div class="row">
+      <div class='col s12 m2'></div>
+      <div class='col s12 m8'>
+        <input type="text" class="datepicker">
+        <label class="active">Date</label>
+      </div>
+      <div class='col s12 m2'></div>
+    </div>
+    <div class="row">
+      <div class='col s12 m2'></div>
+      <div class='col s12 m8'>
+        <input type="text" class="timepicker">
+        <label class="active">Time</label>
+      </div>
+      <div class='col s12 m2'></div>
+    </div>
+    <div class="modal-footer">
+      <a class="waves-effect waves-light btn-large modal-trigger" href="#modal3" id="letsgobtn">Next</a>
+    </div>
+  </div>
+</div>
+
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <div class="row">
+      <div class='col s12 m2'></div>
+      <div class='col s12 m8'>
+        <h3>Want to bring some friends?</h3>
+      </div>
+      <div class='col s12 m2'></div>
+    </div>
+    <div class="row">
+      <div class='col s12 m2'></div>
+      <form class="col s12 m8">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="first_name" type="text" class="validate">
+            <label for="first_name">First Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="last_name" type="text" class="validate">
+            <label for="last_name">Last Name</label>
+          </div>
+        </div>
+      </form>
+      <div class='col s12 m2'></div>
+    </div>
+    <div class="row">
+      <div class='col s4'></div>
+      <div class='col s4 center-align'>
+        <a data-page="page1" class="pagebtn waves-effect waves-light btn-large" id='friendSearch'>Search</a>
+      </div>
+      <div class='col s4'></div>
+    </div>
+    <div class="row">
+      <div class='col s12 m2'></div>
+      <div class="col s12 m8">
+        <ul id="searchList" class="collection">
+        </ul>
+      </div>
+      <div class='col s12 m2'></div>
+    </div>
+    <div class="modal-footer">
+      <a class="waves-effect waves-light btn save-activity" name="save-activity" id="save-activity"
+        onclick="document.location.href = '/profile'">Save Activity</a>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/js/activity.js"></script>

@@ -1,0 +1,181 @@
+nav {
+  height: 75px;
+  line-height: 75px;
+  background-image: linear-gradient(to right, #027f9e, black);
+}
+
+.sidenav {
+  font-family: "Offside", cursive;
+}
+
+#exofont {
+  font-family: "Exo 2", sans-serif;
+}
+
+.profile-top-section {
+  padding-top: 0;
+}
+
+/* .parallax-profile {
+  height: 600px;
+} */
+
+.profile-pic {
+  height: 200px;
+  margin-top: 50px;
+}
+
+#welcome {
+  font-family: "Exo 2", sans-serif;
+}
+
+.hide {
+  display: none;
+}
+
+.datepicker-modal {
+  transform: scale(0.7);
+}
+
+.timepicker-modal {
+  transform: scale(0.7);
+}
+
+#ndevrfont {
+  font-family: "Offside", cursive;
+}
+
+#aboutndevr {
+  font-size: larger;
+}
+
+/* Video background on index.handlebars */
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.viewport-header {
+  position: relative;
+  height: 40vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#modal1 {
+  width: 70%;
+  height: 70%;
+}
+
+#modal2 {
+  width: 70%;
+  height: 70%;
+} /* increase the height and width as you desire */
+
+#modal3 {
+  width: 70%;
+  height: 70%;
+}
+
+#landingpageH1 {
+  font-family: "Syncopate", sans-serif;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1.5vw;
+  line-height: 1.2;
+  font-size: 5vw;
+  text-align: center;
+}
+
+#letsgobtn {
+  background-color: #eb401a;
+  font-family: "Offside", cursive;
+  margin-bottom: 20px;
+}
+
+#friendSearch {
+  background-color: #eb401a;
+  font-family: "Offside", cursive;
+}
+
+#save-activity {
+  background-color: #eb401a;
+  font-family: "Offside", cursive;
+}
+
+.strava-login-button {
+  background-color: #fc4c01;
+  font-family: "Offside", cursive;
+}
+
+.strava-logout-button {
+  background-color: #9e2509;
+  font-family: "Offside", cursive;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.new-activity-button {
+  background-color: #fc4c01;
+  font-family: "Offside", cursive;
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.centered-right {
+  position: absolute;
+  top: 40%;
+  right: 150px;
+  /* transform: translate(-50%, -50%); */
+  color: white;
+  font-family: "Offside", cursive;
+}
+
+.centered-left {
+  position: absolute;
+  top: 40%;
+  left: 150px;
+  /* transform: translate(-50%, -50%); */
+  color: white;
+  font-family: "Offside", cursive;
+}
+
+.activitysection {
+  background-color: #f0f0f5;
+}
+
+.coolblue {
+  color: #027f9e;
+}
+
+#deleteActivityButton {
+  position: relative;
+  background-color: #fc4c01;
+  top: -5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .parallax-container {
+    height: 200px;
+  }
+  h1 {
+    font-size: 30px !important;
+  }
+}

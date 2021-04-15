@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>N-DEVR</title>
+
+  {{!-- Material Icon CDN --}}
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  {{!-- Compiled and minified CSS --}}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  {{!-- LeafletJS --}}
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+  <!-- Font Awesome -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Offside&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
+
+  {{!-- Material Design Icons --}}
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  {{!-- Polyline --}}
+  <script src="/assets/js/Polyline.encoded.js"></script>
+
+  <!-- momentJS -->
+  <script type="text/javascript" src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon" />
+
+  {{!-- AOS --}}
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  {{!-- CSS --}}
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VPS3L7JSGF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-VPS3L7JSGF');
+  </script>
+</head>
+
+<body>
+
+  {{!-- Header --}}
+  <header>
+    <nav class="nav-wrapper">
+      <div class="container">
+        <a href="/" class="brand-logo">
+          <img src="/assets/img/ndevr-white.png" height="100" alt="Ndevr Logo" /></a>
+        <a href="#" class="sidenav-trigger" data-target="mobile-links">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down" id="ndevrfont">
+          <li><a href="/about">ABOUT</a></li>
+          <li><a href="mailto:ndevr.adventure@gmail.com" target="_blank">CONTACT</a></li>
+          <li><a style='color: #EBAF1A' href="/auth/login">LOGIN</a></li>
+        </ul>
+      </div>
+      <ul class="sidenav" style='background-color: #027F9E' id="mobile-links">
+        <li><a href="/">HOME</a></li>
+        <li><a href="/about">ABOUT</a></li>
+        <li><a href="mailto:ndevr.adventure@gmail.com">CONTACT</a></li>
+        <li><a style='color: #EBAF1A' href="/auth/login">LOGIN</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    {{{ body }}}
+  </main>
+
+  {{!-- Footer --}}
+  <footer class="page-footer" style='background-color: #027F9E'>
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12" style='background-color: #027F9E'>
+          <a href="/about">
+            <h5 style='color: #EBAF1A' id="ndevrfont">About Us</h5>
+            <p class="white-text">
+              Use <span style="color: #EBAF1A">N</span>-DEVR to help plan your next outdoor adventure...
+            </p>
+          </a>
+        </div>
+        <div class="row">
+          <div class="col l2 offset-l2 s6 center" style='background-color: #027F9E'>
+            <a href="mailto:ndevr.adventure@gmail.com">
+              <h5 style='color: #EBAF1A' id="ndevrfont">Contact</h5>
+              <a href="mailto:ndevr.adventure@gmail.com" target="_blank" class="btn-floating btn-small black">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+              </a>
+          </div>
+          <div class="col l2 s6 center" style='background-color: #027F9E'>
+            <h5 style='color: #EBAF1A' id="ndevrfont">Follow Us</h5>
+            <a href="https://www.facebook.com/N-devr-114316234081696" target="_blank"
+              class="btn-floating btn-small blue darken-2">
+              <i class="fab fa-facebook-square"></i>
+            </a>
+            <a href="https://www.instagram.com/ndevr_adventure/" target="_blank" class="btn-floating btn-small pink">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright grey darken-4">
+      <div class="container center-align">&copy; 2021 N-DEVR</div>
+    </div>
+  </footer>
+
+
+  <!-- jQuery CDN -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+  {{!-- CanvasJS --}}
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+  {{!-- AOS JS --}}
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <script>
+    AOS.init();
+  </script>
+
+
+  <script>
+    $("document").ready(function () {
+      $(".sidenav").sidenav();
+      $(".parallax").parallax();
+      $('#textarea1').val('New Text');
+      $(document).ready(function () {
+        $('.tabs').tabs();
+        $('.modal').modal();
+        $('.datepicker').datepicker();
+        $('.timepicker').timepicker();
+      });
+    });
+  </script>
+</body>
+
+</html>
